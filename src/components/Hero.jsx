@@ -1,12 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import './Hero.css'
 import Navbar from './Navbar'
 
 const Hero = () => {
   return (
     <div>
-      <div>
+      <motion.div>
         <Navbar />
-      </div>
+      </motion.div>
     </div>
   )
 }
