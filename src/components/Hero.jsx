@@ -5,6 +5,23 @@ import Navbar from "./Navbar";
 
 const Hero = () => {
   const heroRef = useRef(null);
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 70, damping: 12 },
+    },
+  };
+
   const navbarVariant = {
     hidden: { y: -100, opacity: 0 },
     visible: {
@@ -18,6 +35,29 @@ const Hero = () => {
     <div className="hero" ref={heroRef}>
       <motion.div variants={navbarVariant} initial="hidden" animate="visible">
         <Navbar />
+      </motion.div>
+
+      <motion.div
+        className="hero-content"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="left" variants={item}>
+          <h1 className="st-title">
+            STRANGER
+            <br />
+            THINGS
+          </h1>
+          <motion.p className="st-desc" variants={item}>
+            When the lights begin to flicker and reality bends, a hidden world
+            awakens beneath Hawkins. Some doors, once opened, can never be
+            closed.
+          </motion.p>
+          <motion.button className="st-btn" variants={item}>
+            Enter the Upside Down
+          </motion.button>
+        </motion.div>
       </motion.div>
     </div>
   );
