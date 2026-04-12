@@ -10,6 +10,13 @@ const Hero = () => {
   useEffect(() => {
     const hero = heroRef.current;
     const reveal = revealRef.current;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let x = 0;
+    let y = 0;
+    let visible = false;
+    
   }, []);
 
   const container = {
