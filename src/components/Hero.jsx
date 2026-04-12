@@ -1,10 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
 import Navbar from "./Navbar";
 
 const Hero = () => {
   const heroRef = useRef(null);
+  const revealRef = useRef(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const reveal = revealRef.current;
+  }, []);
 
   const container = {
     hidden: {},
@@ -68,6 +74,8 @@ const Hero = () => {
           </motion.p>
         </motion.div>
       </motion.div>
+
+      <div className="fire-reveal" ref={revealRef}></div>
     </div>
   );
 };
