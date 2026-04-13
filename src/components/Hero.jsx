@@ -38,6 +38,11 @@ const Hero = () => {
         reveal.classList.add("active");
       }
     };
+
+    const leave = () => {
+      visible = false;
+      reveal.classList.remove("active");
+    };
   }, []);
 
   const container = {
