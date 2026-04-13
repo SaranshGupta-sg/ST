@@ -16,7 +16,11 @@ const Hero = () => {
     let x = 0;
     let y = 0;
     let visible = false;
-    
+
+    const animate = () => {
+      x += (mouseX - x) * 0.05;
+      y += (mouseY - y) * 0.05;
+    };
   }, []);
 
   const container = {
