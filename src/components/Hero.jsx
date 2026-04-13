@@ -20,6 +20,9 @@ const Hero = () => {
     const animate = () => {
       x += (mouseX - x) * 0.05;
       y += (mouseY - y) * 0.05;
+
+      reveal.style.setProperty("--x", `${x}px`);
+      reveal.style.setProperty("--y", `${y}px`);
     };
   }, []);
 
