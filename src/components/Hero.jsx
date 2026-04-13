@@ -27,6 +27,12 @@ const Hero = () => {
     };
 
     animate();
+
+    const move = (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
   }, []);
 
   const container = {
