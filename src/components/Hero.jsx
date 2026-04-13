@@ -32,6 +32,11 @@ const Hero = () => {
       const rect = hero.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
+
+      if (!visible) {
+        visible = true;
+        reveal.classList.add("active");
+      }
     };
   }, []);
 
