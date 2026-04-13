@@ -23,7 +23,10 @@ const Hero = () => {
 
       reveal.style.setProperty("--x", `${x}px`);
       reveal.style.setProperty("--y", `${y}px`);
+      requestAnimationFrame(animate);
     };
+
+    animate();
   }, []);
 
   const container = {
