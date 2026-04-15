@@ -43,6 +43,14 @@ const Hero = () => {
       visible = false;
       reveal.classList.remove("active");
     };
+
+    hero.addEventListener("mousemove", move);
+    hero.addEventListener("mouseleave", leave);
+
+    return () => {
+      hero.removeEventListener("mousemove", move);
+      hero.removeEventListener("mouseleave", leave);
+    };
   }, []);
 
   const container = {
